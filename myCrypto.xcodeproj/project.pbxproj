@@ -13,6 +13,8 @@
 		226E7E5B200167DF00196612 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226E7E59200167DF00196612 /* Main.storyboard */; };
 		226E7E5D200167DF00196612 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226E7E5C200167DF00196612 /* Assets.xcassets */; };
 		226E7E60200167DF00196612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226E7E5E200167DF00196612 /* LaunchScreen.storyboard */; };
+		226E7E6B200172BB00196612 /* CryptListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226E7E6A200172BB00196612 /* CryptListViewModel.swift */; };
+		226E7E6D2001775200196612 /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226E7E6C2001775200196612 /* RestAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		226E7E5C200167DF00196612 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		226E7E5F200167DF00196612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		226E7E61200167DF00196612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		226E7E6A200172BB00196612 /* CryptListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptListViewModel.swift; sourceTree = "<group>"; };
+		226E7E6C2001775200196612 /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				226E7E55200167DF00196612 /* CryptoListViewController.swift */,
+				226E7E6A200172BB00196612 /* CryptListViewModel.swift */,
 			);
 			path = CryptoList;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				226E7E672001685700196612 /* CryptoList */,
+				226E7E6C2001775200196612 /* RestAPI.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -164,6 +170,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				226E7E58200167DF00196612 /* DetailViewController.swift in Sources */,
+				226E7E6D2001775200196612 /* RestAPI.swift in Sources */,
+				226E7E6B200172BB00196612 /* CryptListViewModel.swift in Sources */,
 				226E7E56200167DF00196612 /* CryptoListViewController.swift in Sources */,
 				226E7E54200167DF00196612 /* AppDelegate.swift in Sources */,
 			);
