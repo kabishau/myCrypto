@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class CryptoListViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
