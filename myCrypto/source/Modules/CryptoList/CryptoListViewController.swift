@@ -1,10 +1,3 @@
-//
-//  MasterViewController.swift
-//  myCrypto
-//
-//  Created by user131656 on 1/6/18.
-//  Copyright © 2018 user131656. All rights reserved.
-//
 
 import UIKit
 
@@ -30,11 +23,6 @@ class CryptoListViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @objc
