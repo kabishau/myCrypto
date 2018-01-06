@@ -1,5 +1,8 @@
-
 import UIKit
+
+protocol ReloadContentProtocol {
+    func reloadContent()
+}
 
 class CryptoListViewController: UITableViewController {
 
@@ -52,5 +55,11 @@ extension CryptoListViewController {
         return cell
     }
 
+}
+
+extension CryptoListViewController: ReloadContentProtocol {
+    func reloadContent() {
+        tableView.reloadData()
+    }
 }
 
