@@ -15,6 +15,7 @@
 		226E7E60200167DF00196612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226E7E5E200167DF00196612 /* LaunchScreen.storyboard */; };
 		226E7E6B200172BB00196612 /* CryptListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226E7E6A200172BB00196612 /* CryptListViewModel.swift */; };
 		226E7E6D2001775200196612 /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226E7E6C2001775200196612 /* RestAPI.swift */; };
+		D4128FC520019B60008C2CBB /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4128FC420019B60008C2CBB /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		226E7E61200167DF00196612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		226E7E6A200172BB00196612 /* CryptListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptListViewModel.swift; sourceTree = "<group>"; };
 		226E7E6C2001775200196612 /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
+		D4128FC420019B60008C2CBB /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				226E7E55200167DF00196612 /* CryptoListViewController.swift */,
 				226E7E6A200172BB00196612 /* CryptListViewModel.swift */,
+				D4128FC420019B60008C2CBB /* Currency.swift */,
 			);
 			path = CryptoList;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4128FC520019B60008C2CBB /* Currency.swift in Sources */,
 				226E7E58200167DF00196612 /* DetailViewController.swift in Sources */,
 				226E7E6D2001775200196612 /* RestAPI.swift in Sources */,
 				226E7E6B200172BB00196612 /* CryptListViewModel.swift in Sources */,
