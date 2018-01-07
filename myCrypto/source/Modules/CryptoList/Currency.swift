@@ -15,6 +15,6 @@ extension Currency {
         }
         
         self.abbriviation = key
-        self.imageUrl = value["imageUrl"] as? String
+        self.imageUrl = value["ImageUrl"] as? String
     }
 }

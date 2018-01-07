@@ -45,6 +45,18 @@ extension CryptoListViewController {
         cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
         let object = modelView.dataSource[indexPath.row]
         cell.textLabel!.text = object.abbriviation
+        
+        let baseImageUrl = "https://www.cryptocompare.com"
+        let wholeStringUrl = baseImageUrl + object.imageUrl!
+        let imageURL = URL(string: wholeStringUrl)
+        
+        do {
+            let urlData = try Data(contentsOf: imageURL!)
+            cell.imageView?.image = UIImage(data: urlData)
+        } catch {
+            print(error)
+        }
+        
         return cell
     }
 
