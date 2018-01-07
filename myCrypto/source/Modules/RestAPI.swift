@@ -2,7 +2,7 @@ import Foundation
 
 class RestAPI {
     
-    func coinsList(complition: @escaping (([Currency]?) -> Void)) {
+    class func coinsList(complition: @escaping (([Currency]?) -> Void)) {
         guard let url = URL(string: "https://min-api.cryptocompare.com/data/all/coinlist") else {
             complition(nil)
             print("url is invalid")
