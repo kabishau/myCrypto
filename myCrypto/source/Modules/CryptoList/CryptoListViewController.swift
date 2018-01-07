@@ -1,14 +1,13 @@
 import UIKit
 
-protocol ReloadContentProtocol {
+protocol CryptoListViewProtocol {
     func reloadContent()
 }
 
 class CryptoListViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [Any]()
-
+    lazy var modelView = CryptoListViewModel(with: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,36 +27,30 @@ class CryptoListViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
-            }
+
         }
     }
-
 }
 
 // MARK: - Table View
 extension CryptoListViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return modelView.dataSource.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
+        let object = modelView.dataSource[indexPath.row]
+        cell.textLabel!.text = object.abbriviation
         return cell
     }
 
 }
 
-extension CryptoListViewController: ReloadContentProtocol {
+extension CryptoListViewController: CryptoListViewProtocol {
     func reloadContent() {
         tableView.reloadData()
     }

@@ -4,7 +4,7 @@ class CryptoListViewModel {
     
     var dataSource: [Currency] = []
     
-    init(view: ReloadContentProtocol) {
+    init(with view: CryptoListViewProtocol) {
         RestAPI.coinsList { [weak self] (list) in
             defer {
                 DispatchQueue.main.async {
