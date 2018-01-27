@@ -46,15 +46,42 @@ extension CryptoListViewController {
         let object = modelView.dataSource[indexPath.row]
         cell.textLabel!.text = object.abbriviation
         
-        let baseImageUrl = "https://www.cryptocompare.com"
-        let wholeStringUrl = baseImageUrl + object.imageUrl!
-        let imageURL = URL(string: wholeStringUrl)
+        func getDocumentDirectory() -> URL? {
+            let fileManager = FileManager.default
+            let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+            let filePath = documentsURL?.appendingPathComponent("\(object.abbriviation).png")
+            return filePath
+        }
         
-        do {
-            let urlData = try Data(contentsOf: imageURL!)
-            cell.imageView?.image = UIImage(data: urlData)
-        } catch {
-            print(error)
+        func saveImageDocumentDirectory() {
+            let baseImageUrl = "https://www.cryptocompare.com"
+            let fullUrl = baseImageUrl + object.imageUrl!
+            let imageURL = URL(string: fullUrl)
+            let data = try? Data(contentsOf: imageURL!)
+            
+            do {
+                if let filePath = getDocumentDirectory() {
+                    try data?.write(to: filePath, options: .atomic)
+                }
+            } catch {
+                print(error)
+            }
+        }
+        
+        func getImage() {
+            guard let filePath = getDocumentDirectory() else { return }
+            let fileName = filePath.path
+            cell.imageView?.image = UIImage(contentsOfFile: fileName)
+        }
+        
+        
+        if let filePath = getDocumentDirectory() {
+            if FileManager.default.fileExists(atPath: filePath.path) {
+                getImage()
+            } else {
+                saveImageDocumentDirectory()
+                getImage()
+            }
         }
         
         return cell
